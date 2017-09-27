@@ -420,9 +420,9 @@
 					}
 					if(!f) {
 						mt = 'china';
-						option.title.text = "全国地图";
+						option.title.text = "调度监控系统";
 					}else{
-						option.title.text = mt+"地图";
+						option.title.text = mt+"信息";
 					}
 					option.tooltip.trigger = 'item';
 					option.series[0].mapType = mt;
@@ -430,7 +430,8 @@
 				});
 				option = {
 					title: {
-						text: '全国地图',
+						text: '调度监控系统',
+                        subtext: '华通云数据科技有限公司',
 						x: 'center'
 					},
 					tooltip: {
@@ -444,12 +445,12 @@
 
 					dataRange: {
                         min: 0,
-                        max: 100,
+                        max: 200,
                         calculable: true,
                         color: ['#d94e5d', '#eac736','#528bba' ],
 
         textStyle: {
-            color: '#56baae'
+            color: '#000000'
         }
 					},
 					toolbox: {
