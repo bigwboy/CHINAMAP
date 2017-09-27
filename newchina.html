@@ -9,7 +9,8 @@
 	<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 	<div id="main" style="height:600px"></div>
 	<!-- ECharts单文件引入 -->
-	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<!--script type="text/javascript" src="js/jquery-1.8.3.min.js"></script-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 	<script type="text/javascript">
 		// 路径配置
@@ -438,42 +439,27 @@
 					legend: {
 						orient: 'vertical',
 						x: 'left',
-						data: ['规划区'],
+						data: ['故障监控']
 					},
 
 					dataRange: {
-						x: 'left',
-						y: 'bottom',
-						splitList: [{
-							start: 100
-						}, {
-							start: 85,
-							end: 100
-						}, {
-							start: 65,
-							end: 85
-						}, {
-							start: 45,
-							end: 65
-						}, {
-							start: 25,
-							end: 45,
-						}, {
-							start: 25,
-							end: 5,
-						}, {
-							end: 5
-						}],
-						color: ['#D3776C', '#E19E81', '#FBE8A4']
+                        min: 0,
+                        max: 100,
+                        calculable: true,
+                        color: ['#d94e5d', '#eac736','#528bba' ],
+
+        textStyle: {
+            color: '#56baae'
+        }
 					},
 					toolbox: {
 						show: true,
 						orient: 'vertical',
 						x: 'right',
-						y: 'center',
+						y: 'center'
 					},
 					series: [{
-						name: '规划区',
+						name: '告警',
 						type: 'map',
 						mapType: 'china',
 						selectedMode: 'single',
@@ -486,7 +472,7 @@
 									}
 								},
 							},
-							emphasis: { label: { show: true } },
+							emphasis: { label: { show: true } }
 						},
 						data: [
 							{ name: '湖南', value: Math.round(Math.random() * 100) },
